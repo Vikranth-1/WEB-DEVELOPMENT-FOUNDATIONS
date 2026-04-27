@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>DNS Lookup</h2>
+<input id="domain" placeholder="Enter domain">
+<button onclick="lookup()">Lookup</button>
+<p id="out"></p>
+
+<script>
+function lookup(){
+ let d=document.getElementById("domain").value;
+
+ fetch("https://dns.google/resolve?name="+d)
+ .then(r=>r.json())
+ .then(data=>{
+  if(data.Answer){
+    let ip=data.Answer.find(a=>a.type===1);
+    out.innerHTML=ip?ip.data:"No IPv4";
+  }else{
+    out.innerHTML="Not found";
+  }
+ });
+}
+</script>
+</body>
+</html>
