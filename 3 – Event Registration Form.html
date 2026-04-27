@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Event Registration</h2>
+
+<form onsubmit="return validate()">
+Name: <input id="name"><br><br>
+Email: <input id="email"><br><br>
+Phone: <input id="phone"><br><br>
+<input type="submit">
+</form>
+
+<p id="msg"></p>
+
+<script>
+function validate(){
+ if(name.value==""||email.value==""||phone.value==""){
+  msg.innerHTML="All fields required"; return false;
+ }
+ if(!email.value.includes("@")){
+  msg.innerHTML="Invalid email"; return false;
+ }
+ if(phone.value.length!=10){
+  msg.innerHTML="Phone must be 10 digits"; return false;
+ }
+ msg.innerHTML="Registered Successfully";
+ return false;
+}
+</script>
+</body>
+</html>
