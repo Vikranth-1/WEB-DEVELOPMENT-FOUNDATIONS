@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container{display:flex; justify-content:space-around;}
+.box{width:120px;height:100px;color:white;text-align:center;line-height:100px;}
+.b1{background:red;} .b2{background:green;} .b3{background:blue;}
+
+@media(max-width:768px){
+ .container{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body>
+
+<h2>Flexbox Layout</h2>
+
+<div class="container">
+<div class="box b1">1</div>
+<div class="box b2">2</div>
+<div class="box b3">3</div>
+</div>
+
+</body>
+</html>
